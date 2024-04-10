@@ -1,0 +1,27 @@
+#!/usr/bin/env bpftrace
+
+BEGIN
+{
+	//printf("Ready to track client sorting...\n");
+}
+
+uprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Client:main
+{
+	//printf("Client Connected!\n");
+	@start_time = nsecs; //nsecs is current time in nano
+}
+
+uretprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Client:main
+{
+	$elapsed_time = nsecs - @start_time;
+	printf("elasped time: %ld", $elapsed_time); 
+	
+	exit();
+}
+
+END
+{
+	clear(@start_time);
+}
+
+

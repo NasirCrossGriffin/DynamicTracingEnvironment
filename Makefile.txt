@@ -1,0 +1,27 @@
+
+
+INC = -I/home/collin/Downloads/Project/boost_1_84_0
+LIB = -L/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/stage/lib
+CC = g++
+VER = -std=c++11
+
+CFLAGS = -std=c++11 -pthread
+
+output: main.o server.o client.o parallel_id.o
+	$(CC) $(LIB) $(VER) $(INC) main.o server.o client.o parallel_id.o -o Environment
+
+main.o: main.cpp
+	$(CC) $(LIB) $(VER) -c $(INC) main.cpp
+
+server.o: server.cpp server.h
+	$(CC) $(LIB) $(VER) -c $(INC) server.cpp
+
+client.o:
+	$(CC) $(LIB) $(VER) -c client.cpp
+	
+parallel_id.o: parallel_id.cpp parallel_id.h
+	$(CC) $(LIB) $(VER) -c parallel_id.cpp
+
+clean:
+	rm main.o server.o client.o parallel_id.o output
+

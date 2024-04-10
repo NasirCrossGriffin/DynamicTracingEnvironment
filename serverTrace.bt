@@ -1,0 +1,34 @@
+#!/usr/bin/env bpftrace
+
+BEGIN
+{
+	printf("Ready to track server creation...\n");
+}
+
+//start when main starts
+uprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Environment:main
+{
+	printf("Server startup has began...\n");
+	@start_time = nsecs; //nsecs is current time in nano
+}
+//end when Server is called
+uprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Environment:Server
+{
+
+$elapsed_time = nsecs - @start_time;
+
+//%ld is essential to cause overflow
+printf("start_time: %ld\n", @start_time);
+printf("end time: %ld\n", nsecs); 
+printf("elasped time: %ld\n", $elapsed_time); 
+
+
+
+printf("Time taken to startup the server: %ld ns\n", $elapsed_time);
+}
+
+END
+{
+	clear(@start_time);
+}
+
