@@ -1,10 +1,13 @@
+/**
+* Written by Collin Meeker
+*/
+
 #ifndef EMPLOYEE_GENERATOR_H
 #define EMPLOYEE_GENERATOR_H
 
 #include <pthread.h>
 
-// Number of threads to generate employee IDs
-//const int NUM_THREADS = 500;
+
 
 void setThreads(int threads);
 

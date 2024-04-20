@@ -7,6 +7,10 @@
 #include <boost/filesystem.hpp>
 #include <unistd.h>
 
+/**
+* Written by Nasir-Cross Griffin
+*/
+
 using boost::asio::ip::tcp;
 
 	std::stringstream buffer;
@@ -73,33 +77,7 @@ void* fileToBuffer(void* arg)
 
 				//boost::asio::write(socket, boost::asio::buffer(hello_message), error);
 				boost::asio::write(socket, boost::asio::buffer(buffer.str()), error);
-			/*
-				//Print out the sorted list
-				while (true) {
-					//Listen for messages
-					std::array<char, 128> buf{};
-						
-					boost::system::error_code error;
-
-					//Read data from socket and write to buffer
-					size_t en = socket.read_some(boost::asio::buffer(buf), error);
-
-						
-					if (error == boost::asio::error::eof) {
-						// Clean connection cut off
-						break;
-					}
-					else if (error)
-					{
-						throw boost::system::system_error(error);
-					}
-					
-
-					std::cout.write(buf.data(), buf.size());
-					
-				}
-				*/
-			}
+			
 		}
 		catch (std::exception e) {
 			std::cerr << e.what() << std::endl;

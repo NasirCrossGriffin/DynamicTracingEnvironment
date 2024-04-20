@@ -6,6 +6,10 @@
 #include <mutex>
 #include <vector>
 
+/**
+* Written by Collin Meeker
+*/
+
 int NUM_THREADS;
 std::vector<int> employee_ids; // Global vector to store the employee IDs
 std::mutex mutex;

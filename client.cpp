@@ -1,7 +1,9 @@
 #include <string>
 #include <list>
 
-//Written by Nasir Cross-Griffin
+/**
+* Written by Nasir-Cross Griffin
+*/
 
 using namespace std;
 

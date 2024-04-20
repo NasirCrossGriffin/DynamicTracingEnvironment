@@ -1,0 +1,49 @@
+BEGIN
+{
+	printf("Ready to trace entire program...\n");
+}
+uprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Environment:main
+{
+	printf("Program has started!\n");
+	@start_time = nsecs;
+}
+uprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Environment:Server
+{
+	@server_time = nsecs;
+	$server_setup = nsecs - @start_time;
+	
+	printf("Server is up and running!\n");
+	printf("Time taken to setup Server: %ld\n", $server_setup);
+		
+}
+
+	
+uprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Client:main 
+{					 
+	printf("Client Connected!\n");
+	printf("Time since last client/server setup: %ld\n", (nsecs - @server_time));						    
+}
+
+uretprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Client:main 
+{
+	printf("Client recieved data then disconnected!\n");
+	@server_time = nsecs;														 
+}
+
+uretprobe:/home/collin/Downloads/Project/DynamicTracingEnvironment-Mongoose-IO-Final-Version/Environment:main 
+{
+	$total_time = nsecs - @start_time;
+	
+	printf("Server Closed...\n");
+	printf("Server was active for: %ld ns", $total_time);
+}
+
+END
+{
+	clear(@server_time);
+	
+}		
+
+
+
+

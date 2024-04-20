@@ -1,10 +1,44 @@
-Attaching 4 probes...
-elasped time: 12831276731
+Program Setup: NUM_THREADS = 1; Client_Loop = 5000;
 
 
 
 Attaching 4 probes...
-elasped time: 13143492275
+elasped time: 3527663586
 
+
+Attaching 4 probes...
+elasped time: 6354858927
+
+
+Attaching 4 probes...
+elasped time: 9728351650
+
+
+Attaching 4 probes...
+elasped time: 13028333565
+
+
+Attaching 4 probes...
+elasped time: 16042572569
+
+
+Attaching 4 probes...
+elasped time: 19297345145
+
+
+Attaching 4 probes...
+elasped time: 23110370322
+
+
+Attaching 4 probes...
+elasped time: 25939538133
+
+
+Attaching 4 probes...
+elasped time: 28656401034
+
+
+Attaching 4 probes...
+elasped time: 30905671356
 
 

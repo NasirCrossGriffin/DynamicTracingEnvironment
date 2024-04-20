@@ -13,9 +13,11 @@
 #include <boost/filesystem.hpp>
 #include <unistd.h>
 #include <pthread.h>
-#include <cstdlib> //add this
 #include "parallel_id.h"
 
+/**
+* Written by Nasir-Cross Griffin
+*/
 
 using namespace std;
 
@@ -112,7 +114,7 @@ pthread_cond_t cond1 = PTHREAD_COND_INITIALIZER;
 
 	int main(int argc, char* argv[])
 	{
-		int numberOfThreads = std::atoi(argv[1]); //add this
+		int numberOfThreads = std::atoi(argv[1]); 
 		setThreads(numberOfThreads);
 		
 		
@@ -125,8 +127,7 @@ pthread_cond_t cond1 = PTHREAD_COND_INITIALIZER;
 
 		
 
-		/*Gather the list 
-		Written by Nasir Cross-Griffin*/
+		
 		for(int i = 0; i < std::atoi(argv[2]); i++) {
 		clients.push_back(new Client("Matthew", generate_employee_ids_multithreaded(), 20 + (rand() % 40), "MALE"));
 		clients.push_back(new Client("Sarah", generate_employee_ids_multithreaded(), 20 + (rand() % 40), "FEMALE"));
@@ -140,22 +141,6 @@ pthread_cond_t cond1 = PTHREAD_COND_INITIALIZER;
 		clients.push_back(new Client("Reece", generate_employee_ids_multithreaded(), 20 + (rand() % 40), "MALE"));
 		}
 		
-		/*Gather the list 
-		Written by Nasir Cross-Griffin*/
-		/*
-		clients.push_back(new Client("Matthew", 1000 + (rand() % 8999), 20 + (rand() % 40), "MALE"));
-		clients.push_back(new Client("Sarah", 1000 + (rand() % 8999), 20 + (rand() % 40), "FEMALE"));
-		clients.push_back(new Client("Jason", 1000 + (rand() % 8999), 20 + (rand() % 40), "MALE"));
-		clients.push_back(new Client("Seth", 1000 + (rand() % 8999), 20 + (rand() % 40), "MALE"));
-		clients.push_back(new Client("Lisa", 1000 + (rand() % 8999), 20 + (rand() % 40), "FEMALE"));
-		clients.push_back(new Client("Trina", 1000 + (rand() % 8999), 20 + (rand() % 40), "FEMALE"));
-		clients.push_back(new Client("Maxwell", 1000 + (rand() % 8999), 20 + (rand() % 40), "MALE"));
-		clients.push_back(new Client("Roxanne", 1000 + (rand() % 8999), 20 + (rand() % 40), "FEMALE"));
-		clients.push_back(new Client("Timothy", 1000 + (rand() % 8999), 20 + (rand() % 40), "MALE"));
-		clients.push_back(new Client("Reece", 1000 + (rand() % 8999), 20 + (rand() % 40), "MALE"));
-		*/
-
-
 		//New Thread created for file creation
 		pthread_create(&ptid, NULL, &createTheNewFile, NULL);
 

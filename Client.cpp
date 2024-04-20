@@ -5,6 +5,10 @@
 #include <list>
 #include <pthread.h>
 
+/**
+* Written by Nasir Cross-Griffin
+*/
+
 using boost::asio::ip::tcp;
 
 list<Client*> clients;

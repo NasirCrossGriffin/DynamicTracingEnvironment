@@ -1,0 +1,41 @@
+Threads = 500
+Client Loop = 20
+
+Script started on 2024-04-09 11:20:46-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="65" LINES="40"]
+do bpftrace serverTrace.bt
+
+
+[sudo] password for collin: 
+Attaching 4 probes...
+elasped time: 11475656078
+elasped time: 11184000853
+elasped time: 11117517097
+elasped time: 11423385123
+elasped time: 11518747156
+elasped time: 11092025395
+elasped time: 11198498026
+elasped time: 11265961726
+elasped time: 11148966015
+elasped time: 11113063088
+elasped time: 11203617265
+elasped time: 11188965627
+elasped time: 11481208702
+elasped time: 11005926011
+elasped time: 11215336277
+elasped time: 11362858606
+elasped time: 12382655035
+elasped time: 11390006594
+elasped time: 11759068254
+elasped time: 13844064676
+elasped time: 12620207454
+elasped time: 12331107646
+elasped time: 10983940167
+elasped time: 12884804193
+elasped time: 11214679854
+^C
+
+
+
+exit
+
+Script done on 2024-04-09 11:27:45-04:00 [COMMAND_EXIT_CODE="0"]

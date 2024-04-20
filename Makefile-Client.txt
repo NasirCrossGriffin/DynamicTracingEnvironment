@@ -1,3 +1,5 @@
+#Written by Collin Meeker and Nasir-Cross Griffin
+
 INC = -I/home/collin/Downloads/Project/boost_1_84_0
 LIBS = -L/home/collin/Downloads/Project/DynamicTracingEnvironment-DynamicTracingEnvironmnet-1.02-Makefile/stage/lib
 CC = g++
