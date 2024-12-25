@@ -1,0 +1,13 @@
+INC = -I/Users/nas/Documents/boost_1_84_0 -I/../client.cpp
+CC = clang++
+VER = -std=c++2b
+
+output: Client.o 
+	$(CC) $(VER) $(INC) Client.o -o Client
+
+Client.o:
+	$(CC) $(VER) $(INC) -c Client.cpp
+
+clean:
+	rm *.o output
+
